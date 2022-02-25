@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Section3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Header -->
+<header id="header" style="margin:4%;" class="ex-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>اصوات اهلي</h1>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</header> <!-- end of ex-header -->
+<!-- end of header -->
+
+
+<!-- Terms Content -->
+<div class="ex-basic-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-container">
+                    <div class="row" style="width:100%;  margin-bottom:3%;   margin-top: 1%;" id="section3table">
+                        
+                    </div> 
+                </div>
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of ex-basic -->
+</div>
+
+<div id="mydiv">
+    <script>
+         $(document).ready(function () {
+                call_ajax("GET", "Home/GetSection3Data", null, fillSection3Data);
+            });
+
+            var snd = new Audio();
+    function playsound(url) {
+
+    if (snd.paused == false) 
+        snd.pause();//pause if playing
+            
+        snd.src = url;
+        snd.play();
+    }
+    </script>
+</div>
+

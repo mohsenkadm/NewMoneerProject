@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ @model  MoneerProject.Models.Entity.Users
+  
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>تسجيل دخول</legend>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true) 
+        <table>
+            <tr>
+                <td>@Html.LabelFor(a => a.Name)</td>
+                <td>@Html.TextBoxFor(a => a.Name)</td>
+                <td>@Html.ValidationMessageFor(a => a.Name)</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(a => a.Password)
+                </td>
+                <td>
+                    @Html.PasswordFor(a => a.Password)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(a => a.Password)
+                </td>
+            </tr>
+            <tr> 
+                <td>
+                    <input class="btn btn-primary" type="submit" value="تسجيل دخول" />
+                </td> 
+                <td>
+                     <input class="btn btn-success" type="button" onclick="call_Action('Home/SignUp')" value="تسجيل حسساب" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}
+

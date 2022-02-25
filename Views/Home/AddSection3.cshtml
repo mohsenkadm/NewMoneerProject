@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewData["Title"] = "AddSection3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} 
+<div class="container text-center">
+    <h2>واجهة لاضافة اصوات اهلي</h2>
+</div>
+<div class="container text-right" style="margin:2% 0;">
+    <div class="row"> 
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#Section3Modal">اضافة صورة جديدة</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <table class="table    table-striped table-hover table-bordered text-center">
+        <thead class="thead-dark ">
+            <tr>
+                <th scope="col">مسار ملف التشغيل</th>
+                <th scope="col">الصورة</th>
+                <th scope="col">العنوان</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody id="tableSection3"> 
+        </tbody>
+    </table>
+</div>  
+<!-- Modal -->
+<div class="modal fade" id="Section3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">اضافة صورة جديد</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="form-group text-right">
+                    <label>العنوان</label>
+                <input type="text" id="Title" name="Title" class="form-control text-right" placeholder="اكتب العنوان" />
+                </div>
+                <div class="form-group text-right">
+                    <label>صورة</label>
+                <input type="file" id="Image" name="Image" class="form-control text-right"  />
+                </div>
+                <div class="form-group text-right">
+                    <label>الملف الصوتي</label>
+                <input type="file" id="PathMp3" name="PathMp3" class="form-control text-right"   />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                <button type="button" class="btn btn-success" id="save">حفظ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mydiv">
+<script>
+    $(document).ready(function () { 
+        call_ajax("GET", "Home/GetSection3Data", null, filltableSection3);
+    }); 
+    $("#save").on("click", (e) => {
+        e.preventDefault();
+        var object = {
+            Section3Id:section3Id,
+            Title: $("#Title").val(),
+        };
+        if (object.Title === "" || object.Title.trim() === "") {
+            toust.warning("ادخل العنوان");
+            return;
+        } 
+        call_ajax("POST", "Home/PostSection3", object, aftersaveSection3);
+    });  
+</script>
+</div>
+
