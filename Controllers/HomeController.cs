@@ -31,6 +31,10 @@ namespace MoneerProject.Controllers
         {
             return View();
         }
+        public IActionResult Cover()
+        {
+            return View();
+        }
 
         /// <summary>
         /// section 2
@@ -345,7 +349,7 @@ namespace MoneerProject.Controllers
                 if (obj != null)
                 {
                     HttpContext.Session.SetInt32("UserId", obj.UserId); 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Section3");
                 }
             }
             return View(objUser);
@@ -368,7 +372,7 @@ namespace MoneerProject.Controllers
                     _context.SaveChanges(); 
 
                     HttpContext.Session.SetInt32("UserId", objUser.UserId);
-                    return RedirectToAction("Index"); 
+                    return RedirectToAction("Section3"); 
                 }
             }
             catch(Exception ex) { }

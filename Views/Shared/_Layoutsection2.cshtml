@@ -13,29 +13,22 @@
     <!-- CUT FROM HERE -->
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MoneerProject</a>
+            <div class="container"> 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1"> 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" onclick="call_Action('Home/Index')" >تعلم الحروف الانكليزية و العربية</a>
-                        </li>
+                            <a class="nav-link text-dark"  onclick="call_Action('Home/Cover')">صفحة الرئيسية</a>
+                        </li> 
                         <li class="nav-item">
                             <a class="nav-link text-dark"  onclick="call_Action('Home/Section2')">تعلم الاصوات مع الصور</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark"  onclick="call_Action('Home/AddSection2')">اضافة اصوات مع الصور</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"  onclick="call_Action('Home/Section3')">اصوات اهلي</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"  onclick="call_Action('Home/AddSection3')">اضافة اصوات اهلي</a>
-                        </li>
+                        </li> 
                     </ul>
                 </div>
             </div>
@@ -49,7 +42,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - MoneerProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - MoneerProject 
         </div>
     </footer>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
